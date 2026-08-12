@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chalo Cricket Khelte Hai</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="bgLayer"></div>
+<canvas id="confettiCanvas"></canvas>
+
+<!-- Hidden YouTube background music player -->
+<div id="ytPlayer" style="position:absolute; width:1px; height:1px; overflow:hidden; opacity:0; pointer-events:none;"></div>
+
+<div class="stage">
+
+  <div class="cover" id="cover">
+    <div class="cover-band">
+      <span class="band-tag">SCHOOL ACTIVITY BOOK</span>
+    </div>
+
+    <div class="cover-body">
+      <div class="emblem">🏏</div>
+
+      <h1 class="title">Chalo Cricket<br>Khelte Hai</h1>
+      <p class="subtitle">A Two-Player Scoring Game</p>
+
+      <div class="rules-box">
+        <div class="rules-title">Rules of the Game</div>
+        <ol class="rules-list">
+          <li>Player 1 and Player 2 take turns — one ball each.</li>
+          <li>Tap the ball to bowl. A page number flips on the board.</li>
+          <li>The <b>last digit</b> of that page number is the runs scored on that ball.</li>
+          <li>Each player faces <b>10 balls</b> in total.</li>
+          <li>The player with the higher score after 10 balls each is the <b>Winner</b>!</li>
+        </ol>
+      </div>
+
+      <button class="start-btn" id="startBtn">▸ Start the Match</button>
+    </div>
+
+    <div class="cover-footer">
+      <span>Class Activity Series</span>
+      <span>Book No. 07</span>
+    </div>
+  </div>
+
+  <div class="board-wrap" id="boardWrap">
+
+    <div class="players">
+      <div class="player-card" data-p="1" id="p1card">
+        <div class="onstrike">ON STRIKE</div>
+        <div class="pname">Player 1</div>
+        <div class="pscore" id="p1score">0</div>
+        <div class="pballs" id="p1balls">0 / 10 balls</div>
+      </div>
+      <div class="player-card" data-p="2" id="p2card">
+        <div class="onstrike">ON STRIKE</div>
+        <div class="pname">Player 2</div>
+        <div class="pscore" id="p2score">0</div>
+        <div class="pballs" id="p2balls">0 / 10 balls</div>
+      </div>
+    </div>
+
+    <button class="mute-btn" id="muteBtn" title="Toggle music">🔊</button>
+
+    <div class="board">
+      <div class="kicker" id="kicker">Player 1's Ball</div>
+      <div class="flap-row" id="flapRow"></div>
+      <div class="label" id="label">— READY —</div>
+      <div class="page-of">last digit of the page = runs</div>
+      <button class="bowl-btn" id="bowlBtn">BOWL</button>
+
+      <div class="winner-banner" id="winnerBanner">
+        <div class="wtext" id="winnerText"></div>
+        <button class="reset-btn" id="resetBtn">New Match</button>
+      </div>
+    </div>
+    <div class="hint" id="hintText">tap the ball — players alternate every ball</div>
+  </div>
+
+</div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="script.js"></script>
+</body>
+</html>
